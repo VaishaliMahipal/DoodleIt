@@ -7,7 +7,7 @@ let model;
 let cnv;
 
 async function loadMyModel() {
-  model = await tf.loadLayersModel('model.json');
+  model = await tf.loadLayersModel('model3/model.json');
   model.summary();
 }
 
@@ -26,6 +26,7 @@ function setup() {
   cnv.mouseOut(guess);
   cnv.touchStarted(guess);
   cnv.parent('canvasContainer');
+
 
   
  /* let clearButton = select('#clear');
@@ -264,7 +265,7 @@ function getInputImage() {
 function draw() {
   strokeWeight(10);
   stroke(0);
-  if (mouseIsPressed || touchStarted) {
+  if (mouseIsPressed) {
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
 }
